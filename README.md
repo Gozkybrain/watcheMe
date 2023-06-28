@@ -17,6 +17,7 @@ watchMe is a movie app built with React that allows users to search for movies, 
 - Axios
 - Framer Motion
 - react-bootstrap
+- Animate.css
 
 ## Getting Started
 
