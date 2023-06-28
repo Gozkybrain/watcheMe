@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import MyForm from "../form/form";
-import Result from "../result/result";
-import Header from "../header";
 import Loader from "./loader";
 
 function Preloader(props) {
@@ -9,7 +6,7 @@ function Preloader(props) {
 
     setTimeout(() => {
         setShowPreloader(false);
-    }, 3000);
+    }, 2000);
 
     return (
         <div>
@@ -17,11 +14,10 @@ function Preloader(props) {
                 <div><Loader /></div>
             ) : (
                 <div>
-                    {/* THE FIRST PROP WILL DISPLAY THE HEADER AND FORM AFTER THE PRELOADER */}
-                    {props.myForm ? <div><Header /><MyForm /></div> : null}
-
-                    {/* THIS WILL DISPLAY THE RESULT AFTER THE PRELOADER */}
-                    {props.myResult ? <Result /> : null}
+                    {/* THE PRELOADER LOADS FOR 2 SECONDS */}
+                    {props.myForm ? <div>
+                    {/* MAIN CONTENT DISPLAYS NEXT */}
+                    </div> : null}
                 </div>
             )}
         </div>

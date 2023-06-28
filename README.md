@@ -1,111 +1,111 @@
-# My Babe App
-This is my first React App, and will be aimed at advancing a love calculator model. It will however use a different and more personalized method.
+# watchMe - Movie App
 
-## Overview
-The app will follow a simple concept. The user meets 4 input fields; **Male Name, Female Name, Male State, and Female State.**
+watchMe is a movie app built with React that allows users to search for movies, view popular movies, and get movie details. It leverages the power of TheMovieDB API to fetch movie data.
 
-Once the user enters these info and submit the form, it renders a result based on some if and else algorithm ran on the background, thats it.
+![watchMe Preview](./src/assets/head-bg.svg)
 
-## Design Concept
-The app will start with a preloader, after which a header image will be displayed with 4 input forms and a submit button.
-The main loader was added in the body of index.html located in the public folder
+## Features
 
-The fields will all be required for the submit button to work, onclick a popup modal will be initiated.
+- Search for movies by title
+- View popular movies
+- Get detailed information about a movie
+- Watch movies through the app (Note: Streaming functionality not implemented)
 
-The modal will also contain a preloader, then text feedback from the algorithm ran in the background based on the input.
+## Technologies Used
 
-Also on the result modal, a section to show user input will also be made available.
+- React
+- Axios
+- Framer Motion
+- react-bootstrap
 
-## Folder Structure
-1. Two general stylesheets are inside the CSS folder containing App.css and index.css
-2. The FORM folder contains the component for the forms and an imported header image, all coming after a preloader.
-3. The IMAGES folder contains the images needed for this project
-4. On click of the form, a result which is contained in the RESULT folder will be triggered, also coming after a preloader.
+## Getting Started
+
+To get started with the watchMe app, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/Gozkybrain/watcheMe`
+2. Install the dependencies: `npm install`
+3. Obtain an API key from TheMovieDB API: [https://www.themoviedb.org/](https://www.themoviedb.org/)
+4. Replace the placeholder API key in the code with your own API key. (See instructions in the code files)
+5. Start the development server: `npm start`
+6. Open the app in your browser: [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+The project structure is organized as follows:
+
+- `src/`
+  - `assets/` - Contains static assets like images and stylesheets
+  - `components/`
+    - `Navigation.js` - Renders the navigation links and app logo.
+    - `SearchBar.js` - Provides a search input field to search for movies.
+    - `MovieCard.js` - Displays a movie thumbnail, title, and year.
+    - `MovieDetails.js` - Displays detailed information about a movie (description, actors, watch button).
+    - `InfiniteScroll.js` - Implements the infinite scroll functionality for popular movies.
+    - `SearchResult.js` - Renders the search results based on the user's query.
+    - `VideoModal.js` - Displays a modal with an embedded YouTube video.
+  - `services/` - Contains functions for making API requests
+  - `App.js` - Entry point of the application
+  - `index.js` - Renders the app into the DOM
+
+## Navigation Component
+
+The `Navigation` component is responsible for rendering the navigation links and app logo in the app's header. It utilizes the `react-bootstrap` library for styling and responsiveness.
+
+The navigation links include options to navigate to the "Recently Added" section, "Upcoming" section, "Developer Profile," and "Documentation." The "Developer Profile" link directs users to the developer's profile page on [https://www.gozkybrain.com.ng/gee-brain/](https://www.gozkybrain.com.ng/gee-brain/). The "Documentation" link redirects users to the project's GitHub repository [https://github.com/Gozkybrain/watcheMe](https://github.com/Gozkybrain/watcheMe).
+
+The `Navigation` component also includes a search form for users to search for movies by title. The search functionality is implemented in the `SearchBar` component.
+
+## Search Functionality
+
+The watchMe app provides a search feature that allows users to search for movies by their title. Here's how the search functionality works:
+
+1. Enter a movie title in the search bar.
+2. Press the "Search" button or hit Enter to initiate the search.
+3. The app will fetch the search results from the TheMovieDB API using the Axios library.
+4. The search results will be displayed on the screen, showing the movie titles and other relevant information.
+5. Clicking on a movie from the search results will show more detailed information about that movie.
+
+The search functionality is implemented in the `SearchBar` component. It makes an API request to TheMovieDB API and updates the search results in the `SearchResult` component.
+
+## Popular Movies and Infinite Scroll
+
+The watchMe app also provides a section to view popular movies. The popular movies are fetched from TheMovieDB API and displayed using the `InfiniteScroll` component.
+
+The `InfiniteScroll` component implements the infinite scroll functionality, allowing users to scroll through an ever-growing list of popular movies. As the user scrolls, more movies are automatically loaded and appended to the list.
+
+## Movie Details and Video Modal
+
+When a user clicks on a movie thumbnail or title in the search results or popular movies, the app displays more detailed information about that movie using the `MovieDetails` component. The `MovieDetails` component shows the movie description, actors, and a button to watch the movie.
+
+The `VideoModal` component displays a modal with an embedded YouTube video. It allows users to watch movies through the app, although the streaming functionality is not implemented in this version.
+
+## Roadmap
+
+Here's a step-by-step guide to building the watchMe app:
+
+1. **Project Setup**: Set up a new React project with the necessary dependencies like React, Axios, Framer Motion, and react-bootstrap.
+2. **Create Necessary Components**: Create the required components, including Navigation, SearchBar, MovieCard, MovieDetails, InfiniteScroll, SearchResult, and VideoModal.
+3. **API Integration for Search**: Implement API integration for the search functionality. Use the API to fetch movie data based on the user's search query.
+4. **Fetch and Display Popular Movies**: Utilize the API to fetch the most popular movies. Display them using the InfiniteScroll component.
+5. **Movie Detail Modal**: Create a modal component to display detailed information about a movie when a user clicks on a movie thumbnail or title.
+6. **Video Modal**: Implement the VideoModal component to display an embedded YouTube video when a user clicks on the watch button in MovieDetails.
+7. **Styling**: Style the components to achieve the desired UI/UX. Use CSS or a styling library like styled-components.
+8. **Testing and Debugging**: Test the app thoroughly and fix any bugs or issues that arise during testing.
+9. **Deployment**: Deploy the app to a hosting service such as Netlify or Heroku to make it accessible to others.
+
+## Resources
+
+Here are some resources that might be helpful for building the watchMe app:
+
+- [React documentation](https://reactjs.org/docs)
+- [Axios documentation](https://axios-http.com/docs/intro)
+- [Framer Motion documentation](https://www.framer.com/api/motion/)
+- [react-bootstrap documentation](https://react-bootstrap.github.io/)
+- [Animate.css](https://animate.style/)
 
 
-## Developer Approach
-All names here are just for explanatory purposes and do not have any ulterior motives.
+## Contributing
 
-input my Name = userName;
-input her Name = babeName;
-input my State = userState;
-input her State = babeState;
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
- userName = Gee Brain;
- babeName = Didi Amore;
-
-We add both names together
-
-var newBond = userName.concat(babeName);
-
-This will join both names
-
-newBond = Gee BrainDidi Amore;
-
-
-Now we turn this string back to an array
-
-newBonds = newBond.split("");
-
-The new results becomes 
-
-newBonds = G,e,e, ,B,r,a,i,n,D,i,d,i, ,A,m,o,r,e;
-
-Now that we have turned it back to an array, we need a function to eliminate reoccurring or duplicate characters in the array
-
-Using Extra Space. Expected results becomes
-
-myBonds = [...new Set(newBonds.filter(char => char !== ""))];
-myBonds = G,e, ,B,r,a,i,n,D,d,A,m,o
-
-Now we can present if statements using myBonds.length 
-
-We can use myBonds.length x 10 to place percentage as ourBonds.
-we can use ourSpace = userState.length - babeState.length 
-
-
-
-
-Total fields:
-Your Name
-Partner's name
-Your Location
-Partner's Location 
-
-
-## Rules for Grade
-1. if myBonds is greater than or equal to 120 and ourSpace is less than or equal to 90, call Result 1
-2. if ourSpace is greater than ourBonds, call result 2
-3. if babeName.length is equal to ourSpace, call Result 3
-4. if ourBonds is greater than  80, and ourSpace is greater than 40, call Result 4
-5. if ourBonds is less than or equal to 60, call result 5
-6. if babeName is less than or equal to 60, call result 6
-7. if ourBonds plus ourSpace is greater than or equal to 150, call result 7
-8. if babeName.length plus userName.length is an even number, call result 8
-9. if babeName.length plus userName.length is an odd number, call result 9
-10. if userName.length is an even number, call result 10
-11. if babeName.length plus babeLocation is an odd number, call result 11
-
-## Dev Note
-I may have altered some of the rules, and results just to get an even better outcome.
-
-## Results :
-1. Don’t worry your partner is faithful, send them chocolate or flowers, they deserve it.
-2. Roses are red, Violets are blue; see they are sharing your babe with you.
-3. Your partner is cheating, you just haven’t found out. They are really good at it and you may never even find out.
-4. Your partner may cheat soon, they are starving from attention. Make out time this weekend and take them to the movies.
-5. Forget about cheating, they don’t even love you. You’re just being used!
-6. Come on, do you even love babeName? Why are you even doing this?
-7. Yes they love you but they are going through stuff - its normal. You need to pay more attention to things they are not saying more than things they actually say.
-8. I don't know how to say this but, you both have a twin flame. Fight as much as you want, but you will always be back together.
-9. LOL small nyash dey shake sha, you wey they cheat wan know if your babe dey cheat. Rest!
-10. This relationship is on one bar, somehow i even think everything is your fault.
-11. I will say it, they are cheating on you with your friend. How come you have not noticed yet?
-
-## Final Note
-This game can be further improved with more information, and upgrading the results algorithm.
-
-For instance, take in more data like their age, their state of origin & current state, their best friend's name, their occupation, and all.
-
-With this data, we can enhance the algorithm to generate near correct guesses, but this is basic and has helped me understand the concepts I imagined.
 

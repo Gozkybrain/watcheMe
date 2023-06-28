@@ -3,14 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 #myload{
+  background-color: #fff;
   display: flex;
   height: 100vh;
+  padding-bottom: 20%;
+ /* This style will make it rotate towards middle */
   width: 100%;
   /* background: #000; */
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 768px) {
+  /* Styles for small screens */
+  #myload{
+    padding-bottom: 100%;
+  /* This style will make it rotate towards middle */
+  }
+}
+
+
 .loader{
   height: 25px;
   width: 25px;
