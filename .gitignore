@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+watchMe.MOV
+._.DS_Store
+._Icon
+
+
 # testing
 /coverage
 
